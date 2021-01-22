@@ -28,6 +28,12 @@ export const login = (user) => async (dispatch) => {
   dispatch(setUser(response.data.user));
   return response;
 };
+export const restoreUser = () => async (dispatch) => {
+  const res = await fetch("/api/session");
+  dispatch(setUser(res.data.user));
+  return res;
+};
+
 
 const initialState = { user: null };
 
@@ -46,5 +52,6 @@ const sessionReducer = (state = initialState, action) => {
       return state;
   }
 };
+
 
 export default sessionReducer;
