@@ -7,7 +7,7 @@ export async function fetch(url, options = {}) {
   options.headers = options.headers || {};
 
   // if the options.method is not 'GET', then set the "Content-Type" header to
-  // "application/json", and set the "XSRF-TOKEN" header to the value of the
+  // "application/json", and set the "CSRF-TOKEN" header to the value of the
   // "XSRF-TOKEN" cookie
   if (options.method.toUpperCase() !== "GET") {
     options.headers["Content-Type"] =
@@ -33,3 +33,8 @@ export async function fetch(url, options = {}) {
   // next promise chain
   return res;
 }
+
+export function restoreCSRF() {
+  return fetch("/api/csrf/restore");
+}
+
