@@ -2,4 +2,8 @@ node_modules
 .env
 build
 .DS_Store
+<<<<<<< HEAD
 .eslintcache
+=======
+.eslintcache
+>>>>>>> master

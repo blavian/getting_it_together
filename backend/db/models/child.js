@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
   Child.associate = function(models) {
     Child.belongsTo(models.User,{foreignKey:'userId'})
     Child.hasMany(models.Chore,{foreignKey:'childId'})
-    Child.belongsToMany(models.Class, {
+     Child.belongsToMany(models.Class, {
        foreignKey: "childId",
        otherKey: "classId",
        through: "AllClass",
