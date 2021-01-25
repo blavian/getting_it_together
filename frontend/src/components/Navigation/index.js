@@ -12,11 +12,12 @@ justify-content:space-between;
 align-items:center;
 flex-wrap:wrap;
 background:yellow;
-
-
-
-
 `
+const hamburger = styled.div``
+
+const navLinkStyled = styled.NavLink
+
+
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -34,13 +35,17 @@ function Navigation({ isLoaded }) {
   }
 
   return (
-    <ul>
+    <Nav>
+    <Logo href="">
+    GettingIt<span>2gether</span>
+    </Logo>
       <li>
         <NavLink exact to="/">
           Home
         </NavLink>
         {isLoaded && sessionLinks}
       </li>
+      </nav>
     </ul>
   );
 }
