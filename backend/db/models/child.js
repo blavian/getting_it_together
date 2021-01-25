@@ -7,7 +7,8 @@ module.exports = (sequelize, DataTypes) => {
     age: DataTypes.NUMERIC
   }, {});
   Children.associate = function(models) {
-    Child.belongsTo(models.User,{foreignKey:'user_id'})
+    Child.belongsTo(models.User,{foreignKey:'userId'})
+    Child.hasMany(models.Chore,{foreignKey:'childId'})
   };
   return Children;
 };
