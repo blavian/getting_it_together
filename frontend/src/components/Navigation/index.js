@@ -39,14 +39,12 @@ function Navigation({ isLoaded }) {
     <Logo href="">
     GettingIt<span>2gether</span>
     </Logo>
-      <li>
+
         <NavLink exact to="/">
           Home
         </NavLink>
         {isLoaded && sessionLinks}
-      </li>
-      </nav>
-    </ul>
+      </Nav>
   );
 }
 
