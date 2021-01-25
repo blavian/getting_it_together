@@ -1,19 +1,19 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Children = sequelize.define('Children', {
+  const Child = sequelize.define('Child', {
     userId: DataTypes.INTEGER,
     first_name: DataTypes.STRING,
     last_name: DataTypes.STRING,
     age: DataTypes.NUMERIC
   }, {});
-  Children.associate = function(models) {
+  Child.associate = function(models) {
     Child.belongsTo(models.User,{foreignKey:'userId'})
     Child.hasMany(models.Chore,{foreignKey:'childId'})
-     Class.belongsToMany(models.Class, {
+    Child.belongsToMany(models.Class, {
        foreignKey: "childId",
        otherKey: "classId",
        through: "AllClass",
      });
   };
-  return Children;
+  return Child;
 };

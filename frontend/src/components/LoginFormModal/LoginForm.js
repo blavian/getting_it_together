@@ -18,7 +18,18 @@ function LoginForm() {
     );
   };
 
+  const handleDemoSubmit = (e) => {
+    e.preventDefault();
+    setErrors([]);
+    return dispatch(sessionActions.login({ credential:'Demo', password:'password'})).catch(
+      (res) => {
+        if (res.data && res.data.errors) setErrors(res.data.errors);
+      }
+    );
+  };
+
   return (
+    <>
     <form onSubmit={handleSubmit}>
       <ul>
         {errors.map((error, idx) => (
@@ -45,6 +56,9 @@ function LoginForm() {
       </label>
       <button type="submit">Log In</button>
     </form>
+
+    <button type="submit" onClick={handleDemoSubmit}>Demo User</button>
+    </>
   );
 }
 

@@ -4,6 +4,19 @@ import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import LoginFormModal from "../LoginFormModal";
 import "./Navigation.css";
+import styled from "styled-components"
+
+const Navbar = styled.div`
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+background:yellow;
+
+
+
+
+`
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);

@@ -4,6 +4,8 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import styled from "styled-components"
+
 
 function App() {
   const dispatch = useDispatch();
@@ -12,8 +14,14 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
+ const Container = styled.div`
+ box-sizing:border-box;
+ margin:0;
+ padding:0;
+ `
+
   return (
-    <>
+    <Container>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
@@ -22,7 +30,7 @@ function App() {
           </Route>
         </Switch>
       )}
-    </>
+    </Container>
   );
 }
 
