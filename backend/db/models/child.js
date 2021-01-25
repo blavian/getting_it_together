@@ -9,6 +9,11 @@ module.exports = (sequelize, DataTypes) => {
   Children.associate = function(models) {
     Child.belongsTo(models.User,{foreignKey:'userId'})
     Child.hasMany(models.Chore,{foreignKey:'childId'})
+     Class.belongsToMany(models.Class, {
+       foreignKey: "childId",
+       otherKey: "classId",
+       through: "AllClass",
+     });
   };
   return Children;
 };
