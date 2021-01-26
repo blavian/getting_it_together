@@ -1,19 +1,23 @@
-import{useEffect, useState} from 'react'
-import {fetch} from '../../store/csrf'
+import{useEffect} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import { fetchAllChildren } from "../../store/children";
 
 const Schedule = ()=>{
-  const[currentSchedule,setSchedule] = useState([])
-  
+  const dispatch = useDispatch()
+  const currentChildren = useSelector(state=>{
+    return state.currentChildren
+  })
    // eslint-disable-next-line react-hooks/exhaustive-deps
    useEffect(async() => {
-       const response = await fetch('/api/schedule')
-       setSchedule(response.data.schedule)
-   }, []);
+       dispatch(
+         fetchAllChildren()
+         )
+   }, [dispatch]);
     return(
         <div className="container">
         <h1> Children</h1>
-        {!currentSchedule && <h1> Add child</h1>}
-        {currentSchedule && currentSchedule.map(child=>{
+        {!currentChildren && <h1> Add child</h1>}
+        {currentChildren && currentChildren.map(child=>{
           return <h1>{child.name}</h1>
         })}
         </div>
