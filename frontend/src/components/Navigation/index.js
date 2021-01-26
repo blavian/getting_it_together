@@ -38,13 +38,27 @@ function Navigation({ isLoaded }) {
     <Logo href="">
     GettingIt<span>2gether</span>
     </Logo>
-    
-        <NavLink exact to="/">
-          Home
-        </NavLink>
+    <Hamburger>
+      <span />
+      <span />
+      <span />
+    </Hamburger>
+    <Menu>
+      <MenuLink href=''>About</MenuLink>
+      <MenuLink href='/'> Home</MenuLink>
         {isLoaded && sessionLinks}
+        <MenuLink href="">Contact</MenuLink>
+
+    </Menu>      
       </Nav>
   );
 }
+const Nav = styled.div``;
+const Hamburger = styled.div``;
+const MenuLink = styled.div``;
+const Menu = styled.div``;
+const Logo = styled.div``;
+
+
 
 export default Navigation;
