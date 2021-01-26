@@ -6,6 +6,8 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import styled from "styled-components"
 import Home from "./components/Home"
+import Schedule from "./components/Schedule"
+
 
 
 function App() {
@@ -26,6 +28,9 @@ function App() {
           </Route>
           <Route path = "/" exact>
             <Home />
+          </Route>
+          <Route path = '/schedule'>
+            <Schedule />
           </Route>
         </Switch>
       )}
