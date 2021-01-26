@@ -1,9 +1,13 @@
 const express = require('express')
 const router = express.Router()
+const asyncHandler = require("express-async-handler");
 
-router.get("/",async (req,res)=>{
-    console.log('route hit')
-    res.json({message:"this works"})
-})
+const { Child } = require("../../db/models/child");
+
+router.get("/", async (req, res,next) => {
+  const children = await Child.findAll();
+  res.json({ children });
+});
+
 
 module.exports = router;
