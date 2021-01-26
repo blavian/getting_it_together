@@ -15,7 +15,6 @@ background:yellow;
 `
 const hamburger = styled.div``
 
-const navLinkStyled = styled.NavLink
 
 
 
@@ -39,7 +38,7 @@ function Navigation({ isLoaded }) {
     <Logo href="">
     GettingIt<span>2gether</span>
     </Logo>
-
+    
         <NavLink exact to="/">
           Home
         </NavLink>
