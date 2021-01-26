@@ -5,6 +5,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import styled from "styled-components"
+import Home from "./components/Home"
 
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
         <Switch>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path = "/" exact>
+            <Home />
           </Route>
         </Switch>
       )}
