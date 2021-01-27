@@ -1,12 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const asyncHandler = require("express-async-handler");
+const {Chore} = require("../../db/models")
 
 router.get(
   "/",
-  asyncHandler(async function (req, res, _next) {
-    console.log("route hit");
-    res.json({ message: "this works" });
+  asyncHandler(async function (req, res) {
+  const chores = await Chore.findAll()
+  res.json({chores})
   })
 );
 
