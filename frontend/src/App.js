@@ -7,6 +7,7 @@ import Navigation from "./components/Navigation";
 import styled from "styled-components"
 import Home from "./components/Home"
 import Schedule from "./components/Schedule"
+import Children from "./components/Children"
 
 
 
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path = '/schedule'>
             <Schedule />
+          </Route>
+          <Route path = '/children'>
+            <Children />
           </Route>
         </Switch>
       )}
