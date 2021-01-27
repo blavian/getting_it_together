@@ -11,7 +11,6 @@ router.get(
    const children = await Child.findAll({where:{
      userId:req.params.userId
    }});
-   console.log(children, "--------");
    res.json({ children });
   })
 );
