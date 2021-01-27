@@ -5,20 +5,24 @@ import { fetchAllChildren } from "../../store/children";
 const Schedule = ()=>{
   const dispatch = useDispatch()
   const currentChildren = useSelector(state=>{
-    return state.currentChildren
+    return state.children
+  })
+  const user = useSelector(state=>{
+    return state.session.user
   })
    // eslint-disable-next-line react-hooks/exhaustive-deps
    useEffect(async() => {
        dispatch(
-         fetchAllChildren()
+         fetchAllChildren(user.id)
          )
    }, [dispatch]);
+   console.log(currentChildren)
     return(
-        <div className="container">
+        <div>
         <h1> Children</h1>
         {!currentChildren && <h1> Add child</h1>}
         {currentChildren && currentChildren.map(child=>{
-          return <h1>{child.name}</h1>
+          return <h1>{child.first_name}</h1>
         })}
         </div>
 

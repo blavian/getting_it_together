@@ -9,10 +9,10 @@ const setChildren = (children) => ({
     children: children,
   });
   //Action creator produces a thunk
-  export const fetchAllChildren=()=> {
+  export const fetchAllChildren=(userId)=> {
     return async (dispatch)=>{
         //server
-        const response = await fetch('/api/schedule')
+        const response = await fetch(`/api/schedule/${userId}`)
         dispatch(
             setChildren(response.data.children)
         )
