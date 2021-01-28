@@ -1,7 +1,10 @@
-.sign-up{
-background-color: red;
-display: flex;
-flex-direction: column;
-margin-top: 90px;
-
+form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: rgba(0,0,0,.1);
+  padding: 100px;
 }
+
+
