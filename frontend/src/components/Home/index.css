@@ -1,18 +1,2 @@
-.container{
-    width:80%;
-    height:100%;
-    margin-bottom: auto;
-    position: relative;
-   text-align: center;
-   color:#ffffff;
-}
-img{
-    width:100%;
-    height:100%
-}
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-67%, -380%)
-}
+
+
