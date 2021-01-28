@@ -15,7 +15,7 @@ const Schedule = ()=>{
        dispatch(
          fetchAllChildren(user.id)
          )
-   }, [dispatch]);
+   }, [dispatch,user.id]);
    console.log(currentChildren)
     return(
         <div>
