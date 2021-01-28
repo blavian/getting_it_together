@@ -13,7 +13,7 @@ export const fetchAllSchedules = (childId) => {
     //server
     const response = await fetch(`/api/children/${childId}`);
     console.log(response)
-    dispatch(setSchedule(response.data.schedule));
+    dispatch(setSchedule(response.data.chores));
   };
 };
 
@@ -23,7 +23,7 @@ const reducer = (state= initialState,action)=>{
     let newState;
     switch(action.type){
         case SET_All_Schedules:
-      newState = action.children
+      newState = action.schedule
      return newState;
     default:
       return state;

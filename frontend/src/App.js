@@ -33,7 +33,7 @@ function App() {
           <Route path = '/schedule'>
             <Schedule />
           </Route>
-          <Route path = '/children'>
+          <Route path = '/children/:childId'>
             <Children />
           </Route>
         </Switch>
