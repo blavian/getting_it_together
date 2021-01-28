@@ -26,7 +26,8 @@ border-bottom: 2px solid #C3C3E5;
   box-shadow: 5px 2px rgba(195, 195, 229,.3 );
 }
 .name{
-  color:white;  
+  color:white;
+  text-transform: upperCase;  
 }
 
 

@@ -27,7 +27,8 @@ const Schedule = ()=>{
             return(
               <div className="card">
               <div class="name">
-             <h1>{child.first_name}</h1>
+             <h1>{child.first_name} {child.last_name}</h1>
+             <h2>Age:{child.age}</h2>
               </div>
               </div>
             )
