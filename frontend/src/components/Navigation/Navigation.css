@@ -1,0 +1,13 @@
+.nav{
+   display: flex;
+   justify-content: space-between;
+   background-color:rgb(128,0,128);
+   align-items: center;
+   position:fixed;
+   width: 95%;
+   height:10px;
+}
+.link{
+    color:white;
+    text-decoration: none;
+}

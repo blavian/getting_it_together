@@ -1,0 +1,7 @@
+.sign-up{
+background-color: red;
+display: flex;
+flex-direction: column;
+margin-top: 90px;
+
+}
