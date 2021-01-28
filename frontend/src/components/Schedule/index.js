@@ -20,11 +20,17 @@ const Schedule = ()=>{
    console.log(currentChildren)
     return (
       <div>
-        <p className="title"> Children </p>
+        <p className="child"> Children </p>
         {!currentChildren && <h1> Add child</h1>}
         {currentChildren &&
           currentChildren.map((child) => {
-            return <h1>{child.first_name}</h1>;
+            return(
+              <div className="card">
+              <div class="name">
+             <h1>{child.first_name}</h1>
+              </div>
+              </div>
+            )
           })}
       </div>
     );
