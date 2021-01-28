@@ -27,7 +27,8 @@ border-bottom: 2px solid #C3C3E5;
 }
 .name{
   color:white;
-  text-transform: upperCase;  
+  text-transform: upperCase;
+  font-size: 0.7rem;  
 }
 
 
