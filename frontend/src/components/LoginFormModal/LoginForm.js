@@ -55,10 +55,10 @@ function LoginForm() {
           />
         </label>
         <button type="submit">Log In</button>
-      </form>
       <button type="submit" onClick={handleDemoSubmit}>
         Demo User
       </button>
+      </form>
     </>
   );
 }
