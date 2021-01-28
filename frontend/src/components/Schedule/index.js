@@ -1,6 +1,7 @@
 import{useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { fetchAllChildren } from "../../store/children";
+import './schedule.css'
 
 const Schedule = ()=>{
   const dispatch = useDispatch()
@@ -17,16 +18,16 @@ const Schedule = ()=>{
          )
    }, [dispatch,user.id]);
    console.log(currentChildren)
-    return(
-        <div>
-        <h1> Children</h1>
+    return (
+      <div>
+        <p className="title"> Children </p>
         {!currentChildren && <h1> Add child</h1>}
-        {currentChildren && currentChildren.map(child=>{
-          return <h1>{child.first_name}</h1>
-        })}
-        </div>
-
-    )
+        {currentChildren &&
+          currentChildren.map((child) => {
+            return <h1>{child.first_name}</h1>;
+          })}
+      </div>
+    );
 }
 
 export default Schedule

@@ -1,0 +1,18 @@
+.title {
+  display:flex;
+  flex-direction:row;
+  letter-spacing: 2px;
+  text-transform:uppercase;
+  margin-top: 55px;
+
+}
+
+
+        .title:before, 
+        .title:after { 
+            content: ""; 
+            flex-grow: 1;
+            flex-grow:2;  
+            border-bottom: 2px solid #C3C3E5;
+              
+        } 
