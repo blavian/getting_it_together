@@ -12,6 +12,7 @@ const Schedule = () => {
   const user = useSelector((state) => {
     return state.session.user;
   });
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
     dispatch(fetchAllChildren(user.id));
@@ -24,7 +25,7 @@ const Schedule = () => {
         currentChildren.map((child) => {
           return (
             <>
-              <Link to="/child/:childid">
+              <Link to={`/children/${child.id}`}>
                 <div className="card">
                   <div class="name">
                     <h1>{child.first_name}</h1>
