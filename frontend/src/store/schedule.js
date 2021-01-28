@@ -8,10 +8,11 @@ const setSchedule = (schedule) => ({
   schedule: schedule,
 });
 
-export const fetchAllSchedules = () => {
+export const fetchAllSchedules = (childId) => {
   return async (dispatch) => {
     //server
-    const response = await fetch("/api/children");
+    const response = await fetch(`/api/children/${childId}`);
+    console.log(response)
     dispatch(setSchedule(response.data.schedule));
   };
 };
