@@ -73,7 +73,11 @@ function SignupFormPage() {
           required
         />
       </label>
-      <button type="submit">Sign Up</button>
+
+      <button type="submit">
+        <i class="fa fa-sign-in" aria-hidden="true"></i>
+        Sign Up
+      </button>
     </form>
   );
 }
