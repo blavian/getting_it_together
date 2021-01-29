@@ -1,6 +1,7 @@
 import "./index.css"
 import homePic from "./rachel-o3tIY5pIork-unsplash.jpg";
 import {useSelector} from 'react-redux'
+import Schedule from "../Schedule"
 
 const Home = ()=>{
     const sessionUser = useSelector((state) => state.session.user);
@@ -8,7 +9,7 @@ const Home = ()=>{
 
         return (
           <div className="container">
-           <h1> add a child</h1>
+           < Schedule />
           </div>
         );
     } else{
