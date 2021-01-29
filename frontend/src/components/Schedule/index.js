@@ -20,7 +20,6 @@ const Schedule = () => {
   return (
     <div>
       <p className="child"> Children </p>
-      {!currentChildren && <h1> Add child</h1>}
       {currentChildren &&
         currentChildren.map((child) => {
           return (
