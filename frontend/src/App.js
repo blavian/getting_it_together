@@ -7,7 +7,7 @@ import Navigation from "./components/Navigation";
 import styled from "styled-components"
 import Home from "./components/Home"
 import Schedule from "./components/Schedule"
-import Children from "./components/Children"
+import Chore from "./components/Chore"
 
 
 
@@ -36,7 +36,7 @@ function App() {
             <Schedule />
           </Route>
           <Route path="/children/:childId">
-            <Children />
+            <Chore />
           </Route>
         </Switch>
       )}

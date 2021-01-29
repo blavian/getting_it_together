@@ -1,19 +1,19 @@
 import { fetch } from "./csrf";
 
-const SET_All_Schedules = "schedule/setSchedule";
+const SET_All_Chores = "chore/setChore";
 
 //Action Creator produces an object
-const setSchedule = (schedule) => ({
-  type: SET_All_Schedules,
-  schedule: schedule,
+const setChore = (chore) => ({
+  type: SET_All_Chores,
+  chore: chore
 });
 
-export const fetchAllSchedules = (childId) => {
+export const fetchAllChores = (childId) => {
   return async (dispatch) => {
     //server
     const response = await fetch(`/api/children/${childId}`);
     console.log(response)
-    dispatch(setSchedule(response.data.chores));
+    dispatch(setChore(response.data.chores));
   };
 };
 
@@ -22,8 +22,8 @@ const initialState = [];
 const reducer = (state= initialState,action)=>{
     let newState;
     switch(action.type){
-        case SET_All_Schedules:
-      newState = action.schedule
+        case SET_All_Chores:
+      newState = action.chore
      return newState;
     default:
       return state;
