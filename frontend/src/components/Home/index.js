@@ -15,7 +15,8 @@ const Home = ()=>{
     } else{
         return (
           <div className="container">
-            <h1>
+          <img src={homePic} alt="pic" />
+            <h1 className="text">
               Welcome to Getting it together! If you are struggling with
               managing your kids virtual schedules,this is the place for you.
             </h1>
