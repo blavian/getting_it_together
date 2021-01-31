@@ -22,8 +22,6 @@ font-family: sans-serif;
   color:white;
   text-decoration: none;
 }
-.profile-dropdown li{
- display: flex;
- flex-direction: column-reverse;
-
+.profile-dropdown{
+  margin-top: 10px;
 }
