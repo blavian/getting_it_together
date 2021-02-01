@@ -26,7 +26,7 @@ const Schedule = () => {
             <>
               <Link to={`/children/${child.id}`}>
                 <div className="card">
-                  <div class="name">
+                  <div className="name">
                     <h1>{child.first_name}</h1>
                     <h2>Age:{child.age}</h2>
                   </div>
