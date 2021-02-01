@@ -1,6 +1,6 @@
 "use strict";
 const faker = require("faker");
-const { User } = require("../models");
+
 
 module.exports = {
   up: async (queryInterface) => {
