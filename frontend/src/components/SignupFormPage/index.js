@@ -78,6 +78,9 @@ const updateFile = (e) => {
           required
         />
       </label>
+      <label>
+          <input type="file" onChange={updateFile} />
+        </label>
 
       <button type="submit">
         <i class="fa fa-sign-in" aria-hidden="true"></i>
