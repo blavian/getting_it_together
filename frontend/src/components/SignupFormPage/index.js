@@ -19,23 +19,28 @@ const SignupFormPage = ()=> {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password === confirmPassword) {
-      setErrors([]);
-      return dispatch(
-        sessionActions.signup({ email, username, password,image })
-      ).catch((res) => {
-        if (res.data && res.data.errors) setErrors(res.data.errors);
+    let newErrors = [];
+    dispatch(sessionActions.signup({ username, email, password, image }))
+      .then(() => {
+        setUsername("");
+        setEmail("");
+        setPassword("");
+        setImage(null);
+      })
+      .catch(async (res) => {
+        const data = await res.json();
+        if (data && data.errors) {
+          newErrors = data.errors;
+          setErrors(newErrors);
+        }
       });
-    }
-    return setErrors([
-      "Confirm Password field must be the same as the Password field",
-    ]);
   };
 const updateFile = (e) => {
   const file = e.target.files[0];
   if (file) setImage(file);
 };
   return (
+    <>
     <form  onSubmit={handleSubmit}>
       <ul>
         {errors.map((error, idx) => (
@@ -83,10 +88,23 @@ const updateFile = (e) => {
         </label>
 
       <button type="submit">
-        <i class="fa fa-sign-in" aria-hidden="true"></i>
+        <i className="fa fa-sign-in" aria-hidden="true"></i>
         Sign Up
       </button>
     </form>
+       <div>
+        {sessionUser && (
+          <div>
+            <h1>{sessionUser.username}</h1>
+            <img
+              style={{ width: "150px" }}
+              src={sessionUser.profileImageUrl}
+              alt="profile"
+            />
+          </div>
+        )}
+        </div>
+      </>
   );
 }
 
