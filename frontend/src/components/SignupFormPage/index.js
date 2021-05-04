@@ -4,13 +4,14 @@ import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import "./SignupForm.css";
 
-function SignupFormPage() {
+const SignupFormPage = ()=> {
   const dispatch = useDispatch();
-  const sessionUser = useSelector((state) => state.session.user);
-  const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [image, setImage] = useState(null);
+  const sessionUser = useSelector((state) => state.session.user);
   const [errors, setErrors] = useState([]);
 
   if (sessionUser) return <Redirect to="/" />;
