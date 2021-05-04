@@ -28,9 +28,9 @@ const SignupFormPage = ()=> {
         setImage(null);
       })
       .catch(async (res) => {
-        const data = await res.json();
-        if (data && data.errors) {
-          newErrors = data.errors;
+      
+        if (res.data && res.data.errors) {
+          newErrors = res.data.errors;
           setErrors(newErrors);
         }
       });
