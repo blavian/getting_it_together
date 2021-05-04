@@ -5,14 +5,15 @@ import * as sessionActions from "../../store/session";
 import "./SignupForm.css";
 
 const SignupFormPage = ()=> {
-  const dispatch = useDispatch();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [image, setImage] = useState(null);
-  const sessionUser = useSelector((state) => state.session.user);
   const [errors, setErrors] = useState([]);
+  
+  const dispatch = useDispatch();
+  const sessionUser = useSelector((state) => state.session.user);
 
   if (sessionUser) return <Redirect to="/" />;
 
@@ -21,7 +22,7 @@ const SignupFormPage = ()=> {
     if (password === confirmPassword) {
       setErrors([]);
       return dispatch(
-        sessionActions.signup({ email, username, password })
+        sessionActions.signup({ email, username, password,image })
       ).catch((res) => {
         if (res.data && res.data.errors) setErrors(res.data.errors);
       });
@@ -30,7 +31,10 @@ const SignupFormPage = ()=> {
       "Confirm Password field must be the same as the Password field",
     ]);
   };
-
+const updateFile = (e) => {
+  const file = e.target.files[0];
+  if (file) setImage(file);
+};
   return (
     <form  onSubmit={handleSubmit}>
       <ul>
